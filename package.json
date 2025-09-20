@@ -1,0 +1,20 @@
+{
+  "name": "fullstack-counter-app",
+  "version": "1.0.0",
+  "description": "A full-stack counter application with Node.js backend and React frontend",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "build": "cd server && npm install && cd ../client && npm install && npm run build",
+    "start": "cd server && npm start",
+    "test": "concurrently \"cd server && npm test\" \"cd client && npm test\"",
+    "install:all": "cd server && npm install && cd ../client && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": ["nodejs", "express", "react", "typescript", "fullstack"],
+  "author": "",
+  "license": "MIT"
+}

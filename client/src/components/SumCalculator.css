@@ -1,0 +1,224 @@
+.sum-calculator {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: white;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.sum-calculator__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.sum-calculator__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.sum-calculator__input-group {
+  margin-bottom: 1.5rem;
+}
+
+.sum-calculator__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+.sum-calculator__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.sum-calculator__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sum-calculator__input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sum-calculator__input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.sum-calculator__hint {
+  display: block;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.sum-calculator__controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sum-calculator__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+  justify-content: center;
+  min-width: 140px;
+}
+
+.sum-calculator__button--calculate {
+  background: rgba(76, 175, 80, 0.3);
+  color: white;
+}
+
+.sum-calculator__button--calculate:hover:not(:disabled) {
+  background: rgba(76, 175, 80, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sum-calculator__button--clear {
+  background: rgba(244, 67, 54, 0.3);
+  color: white;
+}
+
+.sum-calculator__button--clear:hover:not(:disabled) {
+  background: rgba(244, 67, 54, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sum-calculator__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sum-calculator__button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.sum-calculator__error {
+  background: rgba(244, 67, 54, 0.2);
+  border: 1px solid rgba(244, 67, 54, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.sum-calculator__result {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sum-calculator__result-header h3 {
+  margin: 0 0 1rem 0;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.sum-calculator__result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sum-calculator__result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sum-calculator__result-item--numbers {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.sum-calculator__result-label {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sum-calculator__result-value {
+  font-weight: 600;
+  color: white;
+}
+
+.sum-calculator__result-value--primary {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.sum-calculator__result-numbers {
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-family: monospace;
+  word-break: break-all;
+  width: 100%;
+  text-align: center;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .sum-calculator {
+    padding: 1.5rem;
+  }
+
+  .sum-calculator__controls {
+    flex-direction: column;
+  }
+
+  .sum-calculator__result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .sum-calculator__result-item--numbers {
+    align-items: flex-start;
+  }
+}
